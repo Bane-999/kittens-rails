@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Kittens</h1>
+
+<div id="kittens">
+  <% @kittens.each do |kitten| %>
+    <%= render kitten %>
+    <h3>
+      <%= kitten.name %>
+    </h3>
+    <p>
+      <%= link_to "Show this kitten", kitten %><br>
+      <%= link_to "Delete this kitten", kitten, data: {"turbo-method": :delete} %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New kitten", new_kitten_path %>
